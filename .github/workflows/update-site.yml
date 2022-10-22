@@ -19,9 +19,10 @@ jobs:
           node-version: 18.7.0
       - name: Install Docusaurus
         run: npm install --global docusaurus-init
+      - run: npm install --global docusaurus
       - run: npm init docusaurus
       - name: Generate site
-        run: yarn build
+        run: npm run build
       - name: Upload resulting website
         uses: actions/upload-artifact@v1
         with:
