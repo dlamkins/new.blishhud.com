@@ -19,7 +19,7 @@ jobs:
           node-version: 18.7.0
       - name: Install Docusaurus
         run: npm install --global docusaurus-init
-        run: npm init docusaurus
+      - run: npm init docusaurus
       - name: Generate site
         run: npm run build
       - name: Upload resulting website
