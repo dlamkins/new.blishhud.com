@@ -39,7 +39,7 @@ jobs:
           name: build
       - name: Replace docs
         run: |
-          mv /home/runner/work/new.blishhud.com/new.blishhud.com/build* /home/runner/work/new.blishhud.com/new.blishhud.com/
+          mv /home/runner/work/new.blishhud.com/new.blishhud.com/build/* /home/runner/work/new.blishhud.com/new.blishhud.com/
           git add -A
           if [[ `git status --porcelain` ]]; then
             git config --local user.email "actions@github.com"
