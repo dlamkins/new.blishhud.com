@@ -40,6 +40,7 @@ jobs:
         run: |
           rm -rf ${GITHUB_REF##*/}
           mv build ${GITHUB_REF##*/}
+          mv ${GITHUB_REF##*/master} ${GITHUB_REF##*/docs}
           git add -A
           if [[ `git status --porcelain` ]]; then
             git config --local user.email "actions@github.com"
