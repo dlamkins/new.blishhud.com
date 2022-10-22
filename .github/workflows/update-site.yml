@@ -21,6 +21,7 @@ jobs:
         run: npm install --global docusaurus-init
       - run: npm install --global docusaurus
       - run: npm init docusaurus
+      - run: npm install
       - name: Generate site
         run: npm run build
       - name: Upload resulting website
