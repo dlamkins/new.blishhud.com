@@ -1,4 +1,4 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css');
+@import url('/static/css/hint.css');
 @font-face {
   font-family: 'Fira Sans';
   font-style: normal;

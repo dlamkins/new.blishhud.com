@@ -1,0 +1,48 @@
+name: Update site
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+
+jobs:
+  build:
+    name: Build and Push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.7.0
+      - name: Generate site
+        run: npm run build
+      - name: Upload resulting website
+        uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: build/
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+      - name: Download website
+        uses: actions/download-artifact@v1
+        with:
+          name: build
+      - name: Replace docs
+        run: |
+          rm -rf ${GITHUB_REF##*/}
+          mv docs ${GITHUB_REF##*/}
+          git add -A
+          if [[ `git status --porcelain` ]]; then
+            git config --local user.email "actions@github.com"
+            git config --local user.name "github-actions"
+            git commit -m "Update website for ${GITHUB_REF##*/} (${GITHUB_SHA:0:7})"
+          fi
+      - name: Push docs
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages

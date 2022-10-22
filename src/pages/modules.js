@@ -3,46 +3,49 @@ import Layout from '@theme/Layout';
 import ModuleCard from './module/moduleCard';
 import ModuleProfile from './module/moduleProfile';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import './module/modules.module.css';
 import Head from '@docusaurus/Head';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 function AllModules(modules) {
     const context = useDocusaurusContext();
     const { siteConfig = {} } = context;
 
     return (
-        <Layout
-            title={`${siteConfig.title}`}
-            description="A modern Guild Wars 2 overlay with powerful module support.">
-            <Head>
-                <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
-            </Head>
+        <BrowserOnly>
+            <Layout
+                title={`${siteConfig.title}`}
+                description="A modern Guild Wars 2 overlay with powerful module support.">
+                <Head>
+                    <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
+                </Head>
 
-            <div class="module-content">
-                <div class="field has-addons" style={{ display: "none" }}>
-                    <p class="control">
-                        <a class="button is-static">
-                            Sort
-                        </a>
-                    </p>
-                    <div class="select is-right">
-                        <select>
-                            <option>A to Z</option>
-                            <option>Z to A</option>
-                            <option>Downloads</option>
-                            <option>Last Update</option>
-                        </select>
+                <div class="module-content">
+                    <div class="field has-addons" style={{ display: "none" }}>
+                        <p class="control">
+                            <a class="button is-static">
+                                Sort
+                            </a>
+                        </p>
+                        <div class="select is-right">
+                            <select>
+                                <option>A to Z</option>
+                                <option>Z to A</option>
+                                <option>Downloads</option>
+                                <option>Last Update</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="module-cards">
+                        {modules &&
+                            modules.map(module => (
+                                <ModuleCard key={module.Namespace} module={module} />
+                            ))
+                        }
                     </div>
                 </div>
-                <div class="module-cards">
-                    {modules &&
-                        modules.map(module => (
-                            <ModuleCard key={module.Namespace} module={module} />
-                        ))
-                    }
-                </div>
-            </div>
-        </Layout>
+            </Layout>
+        </BrowserOnly>
     );
 }
 
@@ -51,21 +54,27 @@ function Module(namespace, module) {
     const { siteConfig = {} } = context;
 
     return (
-        <Layout
-            title={`${siteConfig.title}`}
-            description="A modern Guild Wars 2 overlay with powerful module support.">
-            <Head>
-                <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
-            </Head>
+        <BrowserOnly>
+            <Layout
+                title={`${siteConfig.title}`}
+                description="A modern Guild Wars 2 overlay with powerful module support.">
+                <Head>
+                    <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
+                </Head>
 
-            <div class="module-content">
-                <ModuleProfile namespace={namespace} module={module} />
-            </div>
-        </Layout>
+                <div class="module-content">
+                    <ModuleProfile namespace={namespace} module={module} />
+                </div>
+            </Layout>
+        </BrowserOnly>
     );
 }
 
 function Modules() {
+    if (!ExecutionEnvironment.canUseDOM) {
+        return <label>Wait...</label>
+    }
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [modules, setModules] = useState(null);
