@@ -71,7 +71,7 @@ export default function ModuleProfile({ namespace, module }) {
                         </nav>
                     </div>
                     
-                    <div class="box external-source" dangerouslySetInnerHTML={{ __html: module.ProfileSource }}></div>
+                    <div class="box external-source" dangerouslySetInnerHTML={{ __html: module.ProfileSource ? module.ProfileSource : "<center><i>No Description</i></center>" }}></div>
                 </section>
                 
                 <section class="column is-one-third">
