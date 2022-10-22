@@ -106,7 +106,7 @@ const config = {
                   trademarks are the property of their respective owners.</p>`,
       },
       announcementBar: {
-        id: 'wip', // Any value that will identify this message.
+        id: 'discord', // Any value that will identify this message.
         content:
           'Check out our <a target="_blank" href="https://discord.gg/FYKN3qh">Discord channel</a> for the latest news, prerelease builds, and troubleshooting assistance.',
         backgroundColor: '#8172DA', // Defaults to `#fff`.
