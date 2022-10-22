@@ -32,15 +32,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
+      - run: rm -rf *
       - name: Download website
         uses: actions/download-artifact@v1
         with:
           name: build
       - name: Replace docs
         run: |
-          rm -rf ${GITHUB_REF##*/}
-          mv build ${GITHUB_REF##*/}
-          mv ${GITHUB_REF##*/master} ${GITHUB_REF##*/docs}
           git add -A
           if [[ `git status --porcelain` ]]; then
             git config --local user.email "actions@github.com"
