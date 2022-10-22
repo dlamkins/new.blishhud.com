@@ -39,7 +39,7 @@ jobs:
       - name: Replace docs
         run: |
           rm -rf ${GITHUB_REF##*/}
-          mv build/* ${GITHUB_REF##*/}
+          mv build ${GITHUB_REF##*/}
           git add -A
           if [[ `git status --porcelain` ]]; then
             git config --local user.email "actions@github.com"
