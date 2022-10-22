@@ -20,7 +20,6 @@ jobs:
       - name: Install Docusaurus
         run: npm install --global docusaurus-init
       - run: npm init docusaurus
-      - run: npm run install
       - run: npx docusaurus-init
       - name: Generate site
         run: npm run build
