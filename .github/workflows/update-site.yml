@@ -20,9 +20,8 @@ jobs:
       - name: Install Docusaurus
         run: npm install --global docusaurus-init
       - run: npm init docusaurus
-      - run: npx docusaurus-init
       - name: Generate site
-        run: npm run build
+        run: yarn build
       - name: Upload resulting website
         uses: actions/upload-artifact@v1
         with:
