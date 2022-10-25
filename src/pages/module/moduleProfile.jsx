@@ -38,7 +38,7 @@ export default function ModuleProfile({ namespace, module }) {
                             <img src={ `https://pkgs.blishhud.com/metadata/img/module/${namespace}.png` } alt="Module image" width="128" height="128" onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src = "/img/156027x2.png";
-                            }} />
+                            }} style={{ borderRadius: "6px" }} />
                         </figure>
                     </div>
                     <div class="hero-body">
