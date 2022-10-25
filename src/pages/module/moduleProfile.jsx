@@ -1,5 +1,6 @@
 import React from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import HumanDate from '../components/humanDate';
 
 function CleanModuleProfile(profile) {
     const ytEmbedPattern = /<a href="https:\/\/www\.youtube\.com.*\/([^"]*)"[^<]+<\/a>/gm;
@@ -56,13 +57,13 @@ export default function ModuleProfile({ namespace, module }) {
                             <div class="level-item has-text-centered">
                                 <div>
                                     <p class="heading">Downloads</p>
-                                    <p class="title">{ module.Downloads }</p>
+                                    <p class="title">{ module.Downloads.toLocaleString() }</p>
                                 </div>
                             </div>
                             <div class="level-item has-text-centered">
                                 <div>
                                     <p class="heading">Last Release</p>
-                                    <p class="title hint--left" data-hint="@(DateTime.Now.Date - _moduleInfo.LastRelease).Days Ago">{ module.LastRelease }</p>
+                                    <HumanDate classes='title hint--bottom' timestamp={ module.LastRelease } />
                                 </div>
                             </div>
                             <div class="level-item has-text-centered">
@@ -93,11 +94,11 @@ export default function ModuleProfile({ namespace, module }) {
                                 </tr>
                                 <tr>
                                     <td>Downloads</td>
-                                    <td>{ module.Downloads }</td>
+                                    <td>{ module.Downloads.toLocaleString() }</td>
                                 </tr>
                                 <tr>
                                     <td>Last Update</td>
-                                    <td>{ module.LastRelease }</td>
+                                    <td><HumanDate classes="hint--left" timestamp={ module.LastRelease } /></td>
                                 </tr>
                                 <tr>
                                     <td>Release Notes</td>
