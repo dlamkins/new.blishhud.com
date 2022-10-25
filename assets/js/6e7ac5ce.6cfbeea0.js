@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknew_blishhud_com=self.webpackChunknew_blishhud_com||[]).push([[4504],{7054:(e,t,a)=>{a.r(t),a.d(t,{default:()=>n});var s=a(7294);function n(e){let{timestamp:t,classes:a}=e;var n=new Date(t);return s.createElement("p",{className:a,"data-hint":n.toLocaleString()},n.toLocaleDateString())}}}]);
