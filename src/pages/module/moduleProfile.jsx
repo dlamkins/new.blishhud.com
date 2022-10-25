@@ -101,7 +101,7 @@ export default function ModuleProfile({ namespace, module }) {
                                 </tr>
                                 <tr>
                                     <td>Release Notes</td>
-                                    <td><a target="_blank" href={ `https://pkgs.blishhud.com/${module.Name}.html` }>View Release Notes</a></td>
+                                    <td><a target="_blank" href={ `https://pkgs.blishhud.com/${namespace}.html` }>View Release Notes</a></td>
                                 </tr>
                                 </tbody>
                             </table>
