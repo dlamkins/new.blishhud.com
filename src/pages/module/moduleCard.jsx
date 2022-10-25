@@ -1,14 +1,12 @@
 import React from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 export default function ModuleCard({ module }) {
   if (!ExecutionEnvironment.canUseDOM) {
       return <label>Wait...</label>
   }
-  
+
   return (
-    <BrowserOnly>
       <a class="bhud-module-card" target="_top" href={ `/modules/?module=${module.Namespace}` } >
         <div class="bhud-module-hero">
           <img src={ `https://pkgs.blishhud.com/metadata/img/module/${module.Namespace}.png` } onError={ (e) => {
@@ -36,6 +34,5 @@ export default function ModuleCard({ module }) {
           </div>
         </div>
       </a>
-    </BrowserOnly>
   );
 }

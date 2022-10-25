@@ -12,40 +12,38 @@ function AllModules(modules) {
     const { siteConfig = {} } = context;
 
     return (
-        <BrowserOnly>
-            <Layout
-                title={`${siteConfig.title}`}
-                description="A modern Guild Wars 2 overlay with powerful module support.">
-                <Head>
-                    <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
-                </Head>
-
-                <div class="module-content">
-                    <div class="field has-addons" style={{ display: "none" }}>
-                        <p class="control">
-                            <a class="button is-static">
-                                Sort
-                            </a>
-                        </p>
-                        <div class="select is-right">
-                            <select>
-                                <option>A to Z</option>
-                                <option>Z to A</option>
-                                <option>Downloads</option>
-                                <option>Last Update</option>
-                            </select>
-                        </div>
+        <Layout
+            title={`${siteConfig.title}`}
+            description="A modern Guild Wars 2 overlay with powerful module support.">
+            <Head>
+                <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
+            </Head>
+            <div class="module-content">
+                <div class="field has-addons" style={{ display: "none" }}>
+                    <p class="control">
+                        <a class="button is-static">
+                            Sort
+                        </a>
+                    </p>
+                    <div class="select is-right">
+                        <select>
+                            <option>A to Z</option>
+                            <option>Z to A</option>
+                            <option>Downloads</option>
+                            <option>Last Update</option>
+                        </select>
                     </div>
-                    <div class="module-cards">
-                        {modules &&
-                            modules.map(module => (
+                </div>
+                <div class="module-cards">
+                    <BrowserOnly>{() =>
+                        modules && modules.map(module => (
                                 <ModuleCard key={module.Namespace} module={module} />
                             ))
                         }
-                    </div>
+                    </BrowserOnly>
                 </div>
-            </Layout>
-        </BrowserOnly>
+            </div>
+        </Layout>
     );
 }
 
@@ -54,19 +52,20 @@ function Module(namespace, module) {
     const { siteConfig = {} } = context;
 
     return (
-        <BrowserOnly>
-            <Layout
-                title={`${siteConfig.title}`}
-                description="A modern Guild Wars 2 overlay with powerful module support.">
-                <Head>
-                    <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
-                </Head>
-
-                <div class="module-content">
-                    <ModuleProfile namespace={namespace} module={module} />
-                </div>
-            </Layout>
-        </BrowserOnly>
+        <Layout
+            title={`${siteConfig.title}`}
+            description="A modern Guild Wars 2 overlay with powerful module support.">
+            <Head>
+                <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
+            </Head>
+            <BrowserOnly>
+                {() => 
+                    <div class="module-content">
+                        <ModuleProfile namespace={namespace} module={module} />
+                    </div>
+                }
+            </BrowserOnly>
+        </Layout>
     );
 }
 
