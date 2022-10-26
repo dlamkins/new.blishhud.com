@@ -6,6 +6,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './index.module.css';
 import Head from '@docusaurus/Head';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import ModuleCard from './module/moduleCard';
 
 const moduleShowcase = [
   {
@@ -70,7 +73,7 @@ const features = [
     imageUrl: 'img/1948124.png',
     description: (
       <>
-        Release your modules through our central repository, making them available to anyone using Blish HUD.  Build your modules however you like and PR a new manifest whenever you make a release.
+        Release your modules through our central repository, making them available to anyone using Blish HUD.  Manage and build your modules automatically through our custom build host.
       </>
     ),
   },
@@ -88,7 +91,7 @@ const features = [
     imageUrl: 'img/1769865.png',
     description: (
       <>
-        Join our <a target="_blank" href="https://discord.gg/HzAV82d">Discord channel</a> (more than 3,200 users!), contribute to Blish HUD development, get help in developing your modules, and showcase your work to other Blish HUD users.
+        Join our <a target="_blank" href="https://discord.gg/HzAV82d">Discord channel</a> (more than 5,200 users!), contribute to Blish HUD development, get help in developing your modules, and showcase your work to other Blish HUD users.
       </>
     ),
   },
@@ -112,6 +115,11 @@ function Feature({imageUrl, title, description}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+
+  const items = [
+    // TODO: Put module tiles here.
+  ]
+
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -165,8 +173,22 @@ function Home() {
             </div>
           </section>
         )}
-        <div className="container">
-          <center><p className="hero__subtitle"><i>and more...</i></p></center>
+        <div className={styles.buttons}>
+          <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg link--download',
+                styles.getStarted,
+              )}
+              to='/modules/'>
+                and 40+ more...
+            </Link>
+        </div>
+        <div className="container" style={{ display:"none" }}>
+          <div className="module-content">
+            <div className="module-cards" style={{ display:"default", gridTemplateColumns:"default" }}>
+              <AliceCarousel items={items} responsive={{ 0: { items: 2 }}} />
+            </div>
+          </div>
         </div>
         <img src="/img/events-hero-half.png" className="ui-hero" />
       </main>
