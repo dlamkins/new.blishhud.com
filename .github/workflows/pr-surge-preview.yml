@@ -1,0 +1,35 @@
+name: Surge Preview
+
+on: [pull_request]
+
+jobs:
+  build:
+    name: Build Site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.7.0
+      - name: Install Docusaurus
+        run: npm install --global docusaurus-init
+      - run: npm install --global docusaurus
+      - run: npm init docusaurus
+      - run: npm install
+      - name: Generate site
+        run: npm run build
+      - name: Install Surge
+        run: npm install --global surge >> $SURGE_OUTPUT
+      - name: Upload Site
+        run: surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-$GITHUB_SHA-$GITHUB_RUN_ATTEMPT.surge.sh
+      - uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '$SURGE_OUTPUT'
+            })
