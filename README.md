@@ -1,6 +1,8 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+https://blishhud.com is built using [Docusaurus 2](https://docusaurus.io/), a static website generator.  Content on this site is either automatically generated from GitHub discussion pages, markdown found under the `docs` folder, or react pages (under `docs` or `src`).
+
+The majority of the site is built statically.  Only the module pages display dynamic content.
 
 ### Installation
 
