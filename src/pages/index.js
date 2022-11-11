@@ -138,7 +138,7 @@ function Home() {
                 styles.getStarted,
               )}
               to='https://github.com/blish-hud/Blish-HUD/releases/download/v0.11.7/Blish.HUD.0.11.7.zip'>
-                Download v0.11.7
+                Download v0.11.90000000000
             </Link>&nbsp;
             <Link
               className={clsx(
