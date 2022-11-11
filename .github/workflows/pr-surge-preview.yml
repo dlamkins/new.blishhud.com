@@ -25,7 +25,7 @@ jobs:
         run: surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
       - uses: actions/github-script@v6
         env:
-          SURGE_OUTPUT: http://bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh
+          SURGE_OUTPUT: http://bhud-${{ env.GITHUB_SHA }}-${{ env.GITHUB_RUN_ATTEMPT }}.surge.sh
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
