@@ -34,6 +34,10 @@
   border-left:2px solid #FFFFFF33;
 }
 
+.navbar__brand:hover {
+  color:white;
+}
+
 :root {
   --ifm-color-primary: #303846;
   --ifm-color-primary-dark: #2b323f;
