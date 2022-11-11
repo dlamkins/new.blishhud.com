@@ -2,6 +2,9 @@ name: Surge Preview
 
 on: [pull_request]
 
+env:
+  SURGE_URI: https://bhud-${{ github.sha }}-${{ github.run_attempt }}.surge.sh
+
 jobs:
   build:
     name: Build Site
@@ -25,7 +28,7 @@ jobs:
         run: surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
       - uses: actions/github-script@v6
         env:
-          SURGE_OUTPUT: http://bhud-${{ env.GITHUB_SHA }}-${{ env.GITHUB_RUN_ATTEMPT }}.surge.sh
+          SURGE_OUTPUT: ${{ env.SURGE_URI }}
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
