@@ -31,6 +31,12 @@ export default function ModuleProfile({ namespace, module }) {
 
     return (
         <div class="container">
+            <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+                <ul>
+                <li><a href="/modules">Modules</a></li>
+                <li class="is-active"><a aria-current="page">{module.Name}</a></li>
+                </ul>
+            </nav>
             <section class="hero">
                 <div class="media">
                     <div class="media-left">

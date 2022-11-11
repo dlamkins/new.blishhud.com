@@ -10839,3 +10839,84 @@
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
+
+.breadcrumb a {
+  color: white !important;
+}
+
+.breadcrumb .is-active > a {
+  color: gray !important;
+}
+
+/* Better Mobile Support */
+@media (max-width: 768px) {
+  /* Home screen */
+  .hero--primary {
+    padding: 1rem 1rem 270px 1rem !important;
+  }
+
+  .hero--primary > .container > iframe {
+    width: 100% !important;
+    height: 270px !important;
+    position: absolute;
+    left:0;
+    right:0;
+  }
+
+  /* All modules */
+  .module-content {
+    padding: 1em !important;
+    min-width: 1vw !important;
+  }
+
+  .module-cards {
+    grid-template-columns: none !important;
+  }
+
+  .bhud-module-card {
+    background-color: #38393A !important;
+    overflow: hidden;
+  }
+
+  .bhud-module-hero {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .bhud-module-hero > img {
+    border-radius: 8px 8px 0 0 !important;
+    height: unset !important;
+  }
+
+  .bhud-card-stacked {
+    background-color: #242526 !important;
+    position: relative !important;
+    opacity: 95% !important;
+  }
+
+  .bhud-card-content {
+    padding-left: 0 !important;
+  }
+
+  /* Module Pages */
+  .hero > .media > .media-left {
+    display: none !important;
+  }
+
+  .hero {
+    text-align: center !important;
+  }
+
+  .hero .hero-body {
+    padding: 3rem 0 !important;
+  }
+
+  .box {
+    padding: 0.5em !important;
+  }
+
+  .external-source iframe {
+    width: 100%;
+    height: unset;
+  }
+}

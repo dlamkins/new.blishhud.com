@@ -13,7 +13,7 @@ function AllModules(modules) {
 
     return (
         <Layout
-            title={`${siteConfig.title}`}
+            title={`Modules`}
             description="A modern Guild Wars 2 overlay with powerful module support.">
             <Head>
                 <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
@@ -53,7 +53,7 @@ function Module(namespace, module) {
 
     return (
         <Layout
-            title={`${siteConfig.title}`}
+            title={`Module`}
             description="A modern Guild Wars 2 overlay with powerful module support.">
             <Head>
                 <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
