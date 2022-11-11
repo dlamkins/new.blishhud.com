@@ -20,9 +20,9 @@ jobs:
       - name: Generate site
         run: npm run build
       - name: Install Surge
-        run: npm install --global surge >> $SURGE_OUTPUT
+        run: npm install --global surge
       - name: Upload Site
-        run: surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-$GITHUB_SHA-$GITHUB_RUN_ATTEMPT.surge.sh
+        run: SURGE_OUTPUT=$(surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh)
       - uses: actions/github-script@v5
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -31,5 +31,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '$SURGE_OUTPUT'
+              body: '${SURGE_OUTPUT}'
             })
