@@ -22,7 +22,7 @@ jobs:
       - name: Install Surge
         run: npm install --global surge
       - name: Upload Site
-        run: surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh --token ${SURGE_TOKEN}
+        run: surge /home/runner/work/new.blishhud.com/new.blishhud.com/build --domain bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
       - uses: actions/github-script@v6
         env:
           SURGE_OUTPUT: http://bhud-${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}.surge.sh
