@@ -1,0 +1,13 @@
+.module-card {
+    padding: 2em;
+    cursor:pointer;
+    border:1px solid transparent;
+    color:white;
+}
+
+.module-card:hover {
+    border:1px solid #333;
+    border-radius:6px;
+    color:white;
+    text-decoration: none;
+}

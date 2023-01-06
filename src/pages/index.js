@@ -8,33 +8,35 @@ import styles from './index.module.css';
 import Head from '@docusaurus/Head';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import './index.css';
 import ModuleCard from './module/moduleCard';
 
 const moduleShowcase = [
   {
-    title: <>Marker and Trails Support</>,
-    imageUrl: 'img/1615829.png',
+    title: <>Pathing</>,
+    imageUrl: 'https://assets.gw2dat.com/1228248.png',
     description: (
       <>
-        The Pathing module supports displaying TacO format .zip and .taco markers in-game.
+        Robust TacO marker pack support to guide you through map completion, difficult story content, tedious achievements, and more.
+      </>
+    ),
+    module: "bh.community.pathing"
+  },
+  {
+    title: <>Achievement Tracker</>,
+    imageUrl: 'https://assets.gw2dat.com/965720.png',
+    description: (
+      <>
+        Track any achievement with multiple windows and information from the official wiki.
       </>
     ),
   },
   {
-    title: <>Waypoint and Landmark Lookup</>,
-    imageUrl: 'img/563468.png',
+    title: <>Racing Meter</>,
+    imageUrl: 'https://assets.gw2dat.com/993691.png',
     description: (
       <>
-        Search for Vistas, Waypoints, Dungeons, and more and quickly copy the chat codes to your clipboard.
-      </>
-    ),
-  },
-  {
-    title: <>KillProof Integration</>,
-    imageUrl: 'img/1128503.png',
-    description: (
-      <>
-        A community made module which integrates with <a href="https://killproof.me/" target="_blank">Killproof.me</a> in-game.
+        Specialized mount speedometers. Leaderboards for official and unofficial races. Race your ghost or ghosts from the leaderboards.
       </>
     ),
   }
@@ -73,7 +75,7 @@ const features = [
     imageUrl: 'img/1948124.png',
     description: (
       <>
-        Release your modules through our central repository, making them available to anyone using Blish HUD.  Manage and build your modules automatically through our custom build host.
+        Release your modules through our central repository, making them available to anyone using Blish HUD.  Build and manage your modules automatically through our custom build host and services.
       </>
     ),
   },
@@ -91,11 +93,26 @@ const features = [
     imageUrl: 'img/1769865.png',
     description: (
       <>
-        Join our <a target="_blank" href="https://discord.gg/HzAV82d">Discord channel</a> (more than 5,200 users!), contribute to Blish HUD development, get help in developing your modules, and showcase your work to other Blish HUD users.
+        Join our <a target="_blank" href="https://discord.gg/HzAV82d">Discord channel</a> (more than 5,400 users!), contribute to Blish HUD development, get help in developing your modules, and showcase your work to other Blish HUD users.
       </>
     ),
   },
 ];
+
+function Module({imageUrl, title, description, module}) {
+  const imgUrl = useBaseUrl(imageUrl);
+  return (
+    <a href={`/modules/?module=${module}`} className={clsx('col col--4 module-card', styles.feature)}>
+      {imgUrl && (
+        <div className="text--center">
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
+        </div>
+      )}
+      <h3 className="text--center">{title}</h3>
+      <p className="text--center">{description}</p>
+    </a>
+  );
+}
 
 function Feature({imageUrl, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
@@ -117,15 +134,16 @@ function Home() {
   const {siteConfig = {}} = context;
 
   const items = [
+    
     // TODO: Put module tiles here.
   ]
 
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="A modern Guild Wars 2 overlay with powerful module support.">
+      description={`${siteConfig.tagline}`}>
         <Head>
-          <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
+          <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay, addons, mods, plugins" />
         </Head>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
@@ -167,7 +185,7 @@ function Home() {
             <div className="container">
               <div className="row">
                 {moduleShowcase.map((props, idx) => (
-                  <Feature key={idx} {...props} />
+                  <Module key={idx} {...props} />
                 ))}
               </div>
             </div>
@@ -180,7 +198,7 @@ function Home() {
                 styles.getStarted,
               )}
               to='/modules/'>
-                and 40+ more...
+                and 40+ more modules...
             </Link>
         </div>
         <div className="container" style={{ display:"none" }}>

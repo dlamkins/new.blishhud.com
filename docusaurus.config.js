@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Blish HUD',
-  tagline: 'A modern Guild Wars 2 overlay with powerful module support.',
+  tagline: 'Guild Wars 2\'s largest and most powerful addon overlay.',
   url: 'https://blishhud.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -95,15 +95,17 @@ const config = {
         copyright: `Designed and built with all the love in Tyria by the Blish HUD team with help from many more!
                   <br />
                   <br />
-                  <a href="https://github.com/blish-hud/blish-hud/graphs/contributors">
+                  <a target="_blank" href="https://github.com/blish-hud/blish-hud/graphs/contributors">
                     <img src="https://contrib.rocks/image?repo=blish-hud/blish-hud&max=12" />
                   </a>
                   <hr />
+                  <div style="text-align:left;">
                   <p>This site is not affiliated with ArenaNet, Guild Wars 2, or any of their partners. All copyrights reserved to their respective owners.</p>
                   <p>©2010-${new Date().getFullYear()} ArenaNet, LLC. All rights reserved. Guild Wars, Guild Wars 2, Heart of Thorns,
                   Guild Wars 2: Path of Fire, ArenaNet, NCSOFT, the Interlocking NC Logo, and all associated
                   logos and designs are trademarks or registered trademarks of NCSOFT Corporation. All other
-                  trademarks are the property of their respective owners.</p>`,
+                  trademarks are the property of their respective owners.</p>
+                  </div>`,
       },
       announcementBar: {
         id: 'discord', // Any value that will identify this message.
