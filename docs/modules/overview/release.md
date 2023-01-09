@@ -11,6 +11,12 @@ This repository contains the manifest files for Blish HUD modules. You are highl
 
 ## Submitting a Package
 
+:::caution
+**This process is deprecated.**  Module developers should reach out for a contributor account which provides access to a simple portal (called SSRD) to submit a module.  This portal allows you to more easily manage your releases, release notes, and module profiles.
+
+Please reach out to Freesnöw#0001 on Discord to request access.
+:::
+
 To submit a package to the repository, you should follow these steps:
 
 1. Fork the [bhud-pkgs](https://github.com/blish-hud/bhud-pkgs) repository
@@ -18,7 +24,7 @@ To submit a package to the repository, you should follow these steps:
 3. Submit your PR
 5. Respond to any feedback
 
-## Authoring a Manifest
+### Authoring a Manifest
 
 The minimal manifest syntax is below.  Please only submit one manifest per PR.
 
@@ -50,7 +56,7 @@ Be sure that the manifest filename matches the `Version` and the manifest is loc
 
 The majority of these fields should directly mirror their corresponding values found in your [module's manifest.json](/docs/modules/overview/update-your-manifest).
 
-## Using BhudLib
+### Using BhudLib
 
 To help authors create module package manifests, we have provided BhudLib — a PowerShell library.  The library can be used to check that your module (.bhm) is valid, create a package manifest, and automatically save it in the proper manifests path.
 
@@ -88,11 +94,11 @@ git push -u origin yourmodule_version # "yourmodule_version" should match the na
 
 Once you have pushed your changes, navigate to [the repository on GitHub](https://github.com/blish-hud/bhud-pkgs) and it should prompt you to PR the changes.
 
-## Submit your PR
+### Submit your PR
 
 With the manifest ready, you will need to submit a PR.
 
-### Validation Process
+#### Validation Process
 
 The PR request will go through a validation process.  This process may contain both automated validation and manual review by maintainers.  In the event of validation or review issues, replies will be made in the PR and it assigned back to you to make the appropriate changes.
 

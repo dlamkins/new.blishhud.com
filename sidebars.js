@@ -46,7 +46,7 @@ const sidebars = {
       ]
     },
     {
-      "\"Module Citizen\"": [
+      "Module Citizen": [
         "modules/module-citizen/overview",
         "modules/module-citizen/friendly-ui-ux",
         "modules/module-citizen/ensuring-stability",
@@ -57,7 +57,9 @@ const sidebars = {
       "Guides": [
         "modules/guides/settings",
         "modules/guides/gw2api",
-        "modules/guides/graphicsdevice"
+        "modules/guides/graphicsdevice",
+        "modules/guides/textures",
+        "modules/guides/gw2assets"
       ]
     },
     {

@@ -30,6 +30,7 @@ const moduleShowcase = [
         Track any achievement with multiple windows and information from the official wiki.
       </>
     ),
+    module: "Denrage.AchievementTrackerModule"
   },
   {
     title: <>Racing Meter</>,
@@ -39,6 +40,7 @@ const moduleShowcase = [
         Specialized mount speedometers. Leaderboards for official and unofficial races. Race your ghost or ghosts from the leaderboards.
       </>
     ),
+    module: "Ideka.RacingMeter"
   }
 ];
 
