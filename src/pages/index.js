@@ -157,8 +157,8 @@ function Home() {
                 'button button--outline button--secondary button--lg link--download',
                 styles.getStarted,
               )}
-              to='https://github.com/blish-hud/Blish-HUD/releases/download/v0.11.7/Blish.HUD.0.11.7.zip'>
-                Download v0.11.7
+              to='https://github.com/blish-hud/Blish-HUD/releases/download/v1.0.0/Blish.HUD.1.0.0.zip'>
+                Download Latest
             </Link>&nbsp;
             <Link
               className={clsx(
