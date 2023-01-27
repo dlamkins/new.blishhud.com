@@ -77,6 +77,14 @@ const sidebars = {
         "dev/controls/tabbedwindow2",
         "dev/controls/textbox"
       ]
+    },
+    {
+      "SSRD": [
+        "modules/ssrd/overview",
+
+        "modules/ssrd/registering-modules",
+        "modules/ssrd/additional-services"
+      ]
     }
   ]
 };

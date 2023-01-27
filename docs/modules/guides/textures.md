@@ -9,7 +9,7 @@ Blish HUD modules often deal with texture loading and management, which can be c
 
 ## Texture2D
 
-A `Texture2D` is the standard MonoGame texture class which represented a loaded texture.  A `Texture2D` can be loaded from a number of sources, but most typically it is from your module's ref.
+A `Texture2D` is the standard MonoGame texture class which represents a loaded texture.  A `Texture2D` can be loaded from a number of sources, but most typically it is from your module's ref.
 
 When managing a `Texture2D` directly, you are in charge of its lifecycle.  Textures are not, by default, cached, so if you intend to continue using a texture, it should be stored until it is no longer needed.  Once a texture is not needed, it should be disposed.
 
@@ -113,3 +113,4 @@ if (AsyncTexture2D.TryFromAssetId(102491, out AsyncTexture2D texture)) {
 - At this time, assets.gw2dat.com assets are managed manually.  That means that textures introduced in new releases may not always be immediately available.  For assistance with filling in missing assets, please reach out to Freesnöw#0001 on Discord.
 - Blish HUD maintains its local texture cache in: `%programdata%\Blish HUD\cache\assets`
 - Modules that previously handled icon caching manually that switch to using the DatAssetCache should consider implementing code to delete their old caches to recover storage space for our users.
+- Do note dispose of textures that are not from your own ref.  With the DatAssetCache, and in other instances, textures are often shared meaning that disposing of the texture can disrupt other modules and Blish HUD core.
