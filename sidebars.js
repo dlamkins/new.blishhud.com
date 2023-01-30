@@ -20,6 +20,7 @@ const sidebars = {
       "User Guides": [
         "user/getting-started",
         "user/installing-modules",
+        "user/overlay-settings",
         "user/arcdps-integration",
         "user/multibox-support",
         "user/portable-mode",
