@@ -95,7 +95,7 @@ const features = [
     imageUrl: 'img/1769865.png',
     description: (
       <>
-        Join our <a target="_blank" href="https://discord.gg/HzAV82d">Discord channel</a> (more than 5,400 users!), contribute to Blish HUD development, get help in developing your modules, and showcase your work to other Blish HUD users.
+        Join our <a target="_blank" href="https://discord.gg/HzAV82d">Discord channel</a> (more than 6,200 users!), contribute to Blish HUD development, get help in developing your modules, and showcase your work to other Blish HUD users.
       </>
     ),
   },
