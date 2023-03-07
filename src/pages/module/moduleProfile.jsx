@@ -1,8 +1,9 @@
 import React from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import HumanDate from '../components/humanDate';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-function CleanModuleProfile(profile) {
+function AutoEmbedYouTube(profile) {
     const ytEmbedPattern = /<a href="https:\/\/www\.youtube\.com.*\/([^"]*)"[^<]+<\/a>/gm;
 
     let m;
@@ -14,6 +15,30 @@ function CleanModuleProfile(profile) {
 
         profile = profile.replace(m[0], `<iframe width='560' height='315' src='https://www.youtube.com/embed/${m[1]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`);
     }
+
+    return profile;
+}
+
+function AssignTitleIds(profile) {
+    const titlePattern = /<h([0-9]) dir="auto">([^<]*)<\/h[0-9]>/gm;
+
+    let m;
+
+    while ((m = titlePattern.exec(profile)) !== null) {
+        if (m.index === titlePattern.lastIndex) {
+            titlePattern.lastIndex++;
+        }
+
+        profile = profile.replace(m[0], `<h${m[1]} id="${encodeURIComponent(m[2].replaceAll(' ', '-').toLowerCase())}" dir="auto">${m[2]}</h${m[1]}>`);
+        //profile = profile.replace(m[0], `<iframe width='560' height='315' src='https://www.youtube.com/embed/${m[1]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`);
+    }
+
+    return profile;
+}
+
+function CleanModuleProfile(profile) {
+    profile = AutoEmbedYouTube(profile);
+    profile = AssignTitleIds(profile);
 
     return profile;
 }
