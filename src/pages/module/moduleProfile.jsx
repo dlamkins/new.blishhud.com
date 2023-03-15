@@ -30,7 +30,6 @@ function AssignTitleIds(profile) {
         }
 
         profile = profile.replace(m[0], `<h${m[1]} id="${encodeURIComponent(m[2].replaceAll(' ', '-').toLowerCase())}" dir="auto">${m[2]}</h${m[1]}>`);
-        //profile = profile.replace(m[0], `<iframe width='560' height='315' src='https://www.youtube.com/embed/${m[1]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`);
     }
 
     return profile;

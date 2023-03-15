@@ -25,6 +25,11 @@
   padding: 0 var(--ifm-pre-padding);
 }*/
 
+.module-content code {
+  background-color: unset !important;
+  color: unset !important;
+}
+
 .ui-hero {
   display: block;
   margin:auto;
