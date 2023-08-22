@@ -110,7 +110,7 @@ const config = {
       announcementBar: {
         id: 'apidown', // Any value that will identify this message.
         content:
-          'The Guild Wars 2 API will be down <a href="https://en-forum.guildwars2.com/topic/135277-guild-wars-2-api-disabled-from-august-18-24/" target="_blank">until sometime on August 24th</a>.  Until then, some Blish HUD features may exhibit unexpected behavior or otherwise not function.  If you need assistance, please reach out in our <a target="_blank" href="https://discord.gg/FYKN3qh">Discord channel</a> for help.',
+          'The Guild Wars 2 API will be down <a href="https://en-forum.guildwars2.com/topic/135277-guild-wars-2-api-disabled-from-august-18-24/" target="_blank">until August 24th</a>. Until then, some Blish HUD features may exhibit unexpected behavior or otherwise not function. If you need assistance, please reach out in our <a target="_blank" href="https://discord.gg/FYKN3qh">Discord channel</a> for help.',
         backgroundColor: '#7F0000', // Defaults to `#fff`.
         textColor: 'white', // Defaults to `#000`.
         isCloseable: false, // Defaults to `true`.
