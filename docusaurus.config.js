@@ -120,7 +120,14 @@ const config = {
         disableSwitch: true,
         respectPrefersColorScheme: false
       },
-      metadata: [{name: 'keywords', content: 'Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay'}],
+      metadata: [
+        {name: 'keywords', content: 'Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay'},
+        {name: 'og:image', content: '/img/logo.png'},
+        {name: 'og:type', content: 'website'},
+        {name: 'og:title', content: 'Blish HUD'},
+        {name: 'og:description', content: 'Guild Wars 2\'s largest and most powerful addon overlay.'},
+        {name: 'twitter:card', content: 'summary'},        
+      ],
       prism: {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
