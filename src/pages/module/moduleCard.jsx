@@ -20,7 +20,7 @@ export default function ModuleCard({ module }) {
               <div data-hint={ module.AuthorName } class="bhud-avatar hint--top">
                 <img src={ module.AuthorAvatar } onError={ (e) => {
                   e.target.onerror = null;
-                  e.target.src = "https://bulma.io/images/placeholders/32x32.png";
+                  e.target.src = "https://assets.gw2dat.com/733268.png";
                 }} />
               </div>
               <div class="bhud-module-line">

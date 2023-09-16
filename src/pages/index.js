@@ -101,7 +101,7 @@ const features = [
   },
 ];
 
-function Module({imageUrl, title, description, module}) {
+function Module({ imageUrl, title, description, module }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <a href={`/modules/?module=${module}`} className={clsx('col col--4 module-card', styles.feature)}>
@@ -116,7 +116,7 @@ function Module({imageUrl, title, description, module}) {
   );
 }
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
@@ -133,10 +133,10 @@ function Feature({imageUrl, title, description}) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
 
   const items = [
-    
+
     // TODO: Put module tiles here.
   ]
 
@@ -144,9 +144,10 @@ function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description={`${siteConfig.tagline}`}>
-        <Head>
-          <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay, addons, mods, plugins" />
-        </Head>
+      <Head>
+        <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay, addons, mods, plugins" />
+        <meta name="og:image" content="/img/logo.png" />
+      </Head>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -158,7 +159,7 @@ function Home() {
                 styles.getStarted,
               )}
               to='https://github.com/blish-hud/Blish-HUD/releases/download/v1.1.1/Blish.HUD.1.1.1.zip'>
-                Download Latest
+              Download Latest
             </Link>&nbsp;
             <Link
               className={clsx(
@@ -195,18 +196,18 @@ function Home() {
         )}
         <div className={styles.buttons}>
           <Link
-              className={clsx(
-                'button button--outline button--secondary button--lg link--download',
-                styles.getStarted,
-              )}
-              to='/modules/'>
-                and 40+ more modules...
-            </Link>
+            className={clsx(
+              'button button--outline button--secondary button--lg link--download',
+              styles.getStarted,
+            )}
+            to='/modules/'>
+            and 50+ more modules...
+          </Link>
         </div>
-        <div className="container" style={{ display:"none" }}>
+        <div className="container" style={{ display: "none" }}>
           <div className="module-content">
-            <div className="module-cards" style={{ display:"default", gridTemplateColumns:"default" }}>
-              <AliceCarousel items={items} responsive={{ 0: { items: 2 }}} />
+            <div className="module-cards" style={{ display: "default", gridTemplateColumns: "default" }}>
+              <AliceCarousel items={items} responsive={{ 0: { items: 2 } }} />
             </div>
           </div>
         </div>

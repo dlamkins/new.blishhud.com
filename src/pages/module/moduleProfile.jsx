@@ -37,7 +37,9 @@ function AssignTitleIds(profile) {
 
 function CleanModuleProfile(profile) {
     profile = AutoEmbedYouTube(profile);
-    profile = AssignTitleIds(profile);
+    
+    // Currently pointless since the page is rendered to late for anchor links to work.
+    //profile = AssignTitleIds(profile);
 
     return profile;
 }
@@ -169,7 +171,10 @@ export default function ModuleProfile({ namespace, module }) {
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48 is-rounded">
-                                        <img src={`https://pkgs.blishhud.com/metadata/img/author/${module.AuthorProfile.Id}.png`} class="is-rounded" alt="Module Author Image" />
+                                        <img src={`https://pkgs.blishhud.com/metadata/img/author/${module.AuthorProfile.Id}.png`} class="is-rounded" alt="Module Author Image" onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = "https://assets.gw2dat.com/733268.png";
+                                        }} />
                                     </figure>
                                 </div>
                                 <div class="media-content">

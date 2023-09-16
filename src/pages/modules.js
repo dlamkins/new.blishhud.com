@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Head from '@docusaurus/Head';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import Loading from '@theme/Loading';
 
 /*
 
@@ -78,11 +79,16 @@ function Module(namespace, module) {
 
     return (
         <Layout
-            title={`Module`}
-            description={`${siteConfig.tagline}`}>
-            <Head>
-                <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
-            </Head>
+            title={`${module.Name} Module`}
+            description={`${module.Summary}`}>
+            <BrowserOnly>
+                {() => 
+                    <Head>
+                        <meta name="keywords" content={`${namespace}, ${module.Name}, Module, Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay`} />
+                        <meta name="og:image" content={`https://pkgs.blishhud.com/metadata/img/module/${namespace}.png`} />
+                    </Head>
+                }
+            </BrowserOnly>
             <BrowserOnly>
                 {() => 
                     <div className="module-content">
@@ -141,9 +147,7 @@ function Modules() {
     if (error) {
         return <label>Error loading: {error}</label>
     } else if (!isLoaded) {
-        return (<div className="hero">
-            <h1>Loading...</h1>
-        </div>)
+        return <Loading />
     } else {
         if (moduleNamespace == null) {
             if (modules != null) {
