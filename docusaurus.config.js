@@ -44,6 +44,12 @@ const config = {
         googleAnalytics: {
           trackingID: 'UA-46839422-21'
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/components/**', '/module/**', '/markers/**'],
+          filename: 'sitemap.xml',
+        }
       }),
     ]
   ],
