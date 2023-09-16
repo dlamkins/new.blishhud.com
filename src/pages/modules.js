@@ -147,7 +147,9 @@ function Modules() {
     if (error) {
         return <label>Error loading: {error}</label>
     } else if (!isLoaded) {
-        return <Loading />
+        return (<div className="hero">
+            <h1>Loading...</h1>
+        </div>)
     } else {
         if (moduleNamespace == null) {
             if (modules != null) {
