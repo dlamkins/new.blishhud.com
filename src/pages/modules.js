@@ -100,9 +100,18 @@ function Module(namespace, module) {
     );
 }
 
+function MdlLoading() {
+    // Just empty layout is more than fine.
+    return (
+        <Layout>
+                
+        </Layout>
+    );
+}
+
 function Modules() {
     if (!ExecutionEnvironment.canUseDOM) {
-        return <label>Wait...</label>
+        return MdlLoading();
     }
 
     const [error, setError] = useState(null);
@@ -147,9 +156,7 @@ function Modules() {
     if (error) {
         return <label>Error loading: {error}</label>
     } else if (!isLoaded) {
-        return (<div className="hero">
-            <h1>Loading...</h1>
-        </div>)
+        return MdlLoading();
     } else {
         if (moduleNamespace == null) {
             if (modules != null) {
