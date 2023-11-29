@@ -183,18 +183,6 @@ export default function ModuleProfile({ namespace, module }) {
                             </div>
 
                             <div class="content">
-                                { module.AuthorProfile.KofiProfile != null &&
-                                    <div class="field has-addons">
-                                        <span class="control">
-                                            <a class="button is-static" style={{width: "180px"}}>
-                                                <i class="fa fa-heart"></i>&nbsp;&nbsp;Donate on Ko-Fi
-                                            </a>
-                                        </span>
-                                        <span class="control is-expanded">
-                                            <a target="_blank" href={`https://ko-fi.com/${module.AuthorProfile.KofiProfile}`} class="button">{module.AuthorProfile.KofiProfile}</a>
-                                        </span>
-                                    </div>
-                                }
                                 { module.AuthorProfile.GuildWars2Profile != null &&
                                     <div class="field has-addons">
                                         <span class="control">
@@ -217,6 +205,11 @@ export default function ModuleProfile({ namespace, module }) {
                                         <span class="control is-expanded">
                                             <a target="_blank" href={`https://github.com/${module.AuthorProfile.GithubProfile}`} class="button">{module.AuthorProfile.GithubProfile}</a>
                                         </span>
+                                    </div>
+                                }
+                                { module.AuthorProfile.KofiProfile != null &&
+                                    <div class="field has-addons">
+                                        <iframe id='kofiframe' src={`https://ko-fi.com/${module.AuthorProfile.KofiProfile}/?hidefeed=true&widget=true&embed=true&preview=true`} style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='660' title={`${module.AuthorProfile.KofiProfile}`}></iframe>
                                     </div>
                                 }
                             </div>
