@@ -38,7 +38,7 @@ function AssignTitleIds(profile) {
 function CleanModuleProfile(profile) {
     profile = AutoEmbedYouTube(profile);
     
-    // Currently pointless since the page is rendered to late for anchor links to work.
+    // Currently pointless since the page is rendered too late for anchor links to work.
     //profile = AssignTitleIds(profile);
 
     return profile;
@@ -109,16 +109,18 @@ export default function ModuleProfile({ namespace, module }) {
                     
                     <div class="box external-source" dangerouslySetInnerHTML={{ __html: module.ProfileSource ? module.ProfileSource : "<center><i>No Description</i></center>" }}></div>
 
-                    <div class="card" style={{ marginTop: "1em", padding: "0" }}>
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                Module Downloads
-                            </p>
-                        </header>
-                        <div class="card-content" style={{ padding: "0" }}>
-                            <iframe width="100%" height="470px" scrolling="no" src={ `https://dashboards.blishhud.com/embed/query/21/visualization/32?api_key=WgbLIl20YAQQvaGy8khDWnCQSJ3dRt3loEJ1boip&p_$module_namespaces=${namespace}&p_RelativeDaysSince=15&hide_parameters=true&hide_header=true&hide_link=true` } style = {{ overflow: 'hidden' }} />
+                    { module.Downloads >= 500 && 
+                        <div class="card" style={{ marginTop: "1em", padding: "0" }}>
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Module Downloads
+                                </p>
+                            </header>
+                            <div class="card-content" style={{ padding: "0" }}>
+                                <iframe width="100%" height="470px" scrolling="no" src={ `https://dashboards.blishhud.com/embed/query/21/visualization/32?api_key=WgbLIl20YAQQvaGy8khDWnCQSJ3dRt3loEJ1boip&p_$module_namespaces=${namespace}&p_RelativeDaysSince=15&hide_parameters=true&hide_header=true&hide_link=true` } style = {{ overflow: 'hidden' }} />
+                            </div>
                         </div>
-                    </div>
+                    }
                 </section>
                 
                 <section class="column is-one-third">
@@ -204,6 +206,18 @@ export default function ModuleProfile({ namespace, module }) {
                                         </span>
                                         <span class="control is-expanded">
                                             <a target="_blank" href={`https://github.com/${module.AuthorProfile.GithubProfile}`} class="button">{module.AuthorProfile.GithubProfile}</a>
+                                        </span>
+                                    </div>
+                                }
+                                { module.AuthorProfile.KofiProfile != null &&
+                                    <div class="field has-addons">
+                                        <span class="control">
+                                            <a class="button is-static" style={{width: "180px"}}>
+                                                <i class="fa fa-heart"></i>&nbsp;&nbsp;Donate on Ko-Fi
+                                            </a>
+                                        </span>
+                                        <span class="control is-expanded">
+                                            <a target="_blank" href={`https://ko-fi.com/${module.AuthorProfile.KofiProfile}`} class="button">{module.AuthorProfile.KofiProfile}</a>
                                         </span>
                                     </div>
                                 }
