@@ -89,7 +89,9 @@ export default function ModuleProfile({ namespace, module }) {
                             <div class="level-item has-text-centered">
                                 <div>
                                     <p class="heading">Downloads</p>
-                                    <p class="title">{ module.Downloads.toLocaleString() }</p>
+                                    <p class="title">{ module.Downloads > 0 
+                                                        ? module.Downloads.toLocaleString() 
+                                                        : "Unknown" }</p>
                                 </div>
                             </div>
                             <div class="level-item has-text-centered">
@@ -101,7 +103,7 @@ export default function ModuleProfile({ namespace, module }) {
                             <div class="level-item has-text-centered">
                                 <div>
                                     <p class="heading">Latest Version</p>
-                                    <p class="title">{module.Version}</p>
+                                    <p class="title">{module.Version ?? "Unknown"}</p>
                                 </div>
                             </div>
                         </nav>
