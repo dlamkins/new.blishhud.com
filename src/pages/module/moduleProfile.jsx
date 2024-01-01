@@ -141,7 +141,7 @@ export default function ModuleProfile({ namespace, module }) {
                                 </tr>
                                 <tr>
                                     <td>Downloads</td>
-                                    <td>{ module.Downloads.toLocaleString() }</td>
+                                    <td>{ module.Downloads > 0 ? module.Downloads.toLocaleString() : "Unknown" }</td>
                                 </tr>
                                 <tr>
                                     <td>Last Update</td>
