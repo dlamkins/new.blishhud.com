@@ -27,7 +27,7 @@ We recommend that you use [Healix's Gw2Launcher](https://github.com/Healix/Gw2La
 |-|-|-|
 | Optional name to display | `Blish HUD` | The name of the application to show. |
 | The program to run | `c:/Addons/Blish HUD/Blish HUD.exe` | The path to the `Blish HUD.exe` file. |
-| Optional command line arguments | `--mumble "MumbleLink_%accountid%" --settings "settings\blishhud.%accountid%"` | Ensures that we use a matching mumble name and that we create a unique settings folder. |
+| Optional command line arguments | `--mumble "MumbleLink_%accountid%" --settings "mbprofiles\blishhud.%accountid%"` | Ensures that we use a matching mumble name and that we create a unique settings folder. |
 | Run after... | `Launching` | Blish HUD can be launched immediately or you can select `Loading the game` if you prefer |
 | When the game exits... | `Do nothing` | It is important that you configure Blish HUD to close on its own. Do not let your launcher close Blish HUD! |
 

@@ -39,6 +39,13 @@ _Default: `%userprofile%\Documents\Guild Wars 2\addons\blishhud`_
 
 The directory where Blish HUD should load and save settings and other persistent data from/to.
 
+### -a, --progdata <path\to\programdata>
+_Introduced in Blish HUD v1.1.2_
+
+_Default: `%programdata%\Blish HUD\`_
+
+The path where Blish HUD will save non-user data such as cached textures.
+
 ### -r, --ref <path\to\ref.dat\>
 
 _Default: `.\ref.dat`_
