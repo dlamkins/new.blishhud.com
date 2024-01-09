@@ -17,18 +17,18 @@ export default function ModuleCard({ module }) {
         <div class="bhud-card-stacked">
           <div class="bhud-card-content">
             <div class="bhud-card-title">
-              <div data-hint={ module.AuthorName } class="bhud-avatar hint--top">
+              <a href={ `/modules?author=${module.AuthorName}` } data-hint={ module.AuthorName } class="bhud-avatar hint--top">
                 <img src={ module.AuthorAvatar } onError={ (e) => {
                   e.target.onerror = null;
                   e.target.src = "https://assets.gw2dat.com/733268.png";
                 }} />
-              </div>
+              </a>
               <div class="bhud-module-line">
                 <span class="bhud-card-title hint--top" data-hint={ module.Namespace }>{ module.Name }</span>
               </div>
             </div>
 
-            <div class="content">
+            <div class="content" style={ { fontWeight:400 } }>
               { module.Summary }
             </div>
           </div>

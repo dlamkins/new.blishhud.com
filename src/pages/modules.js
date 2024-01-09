@@ -122,6 +122,7 @@ function Modules() {
 
     var urlParams = new URLSearchParams(window.location.search);
     var moduleNamespace = urlParams.get('module');
+    var moduleAuthor = urlParams.get('author');
 
     useEffect(() => {
         if (moduleNamespace == null) {
@@ -160,7 +161,13 @@ function Modules() {
     } else {
         if (moduleNamespace == null) {
             if (modules != null) {
-                return AllModules(modules, [sortMethod, setSortMethod]);
+                if (moduleAuthor == null) {
+                    return AllModules(modules, [sortMethod, setSortMethod]);
+                } else {
+                    return AllModules(modules.filter(function(module) {
+                        return !module.AuthorName.localeCompare(moduleAuthor, undefined, { sensitivity: 'base' });
+                    }), [sortMethod, setSortMethod]);
+                }
             } else {
                 setIsLoaded(false);
             }
