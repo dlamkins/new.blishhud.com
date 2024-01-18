@@ -172,7 +172,7 @@ export default function ModuleProfile({ namespace, module }) {
                             </p>
                         </header>
                         <div class="card-content">
-                            <div class="media">
+                            <a class="media" href={`/modules?author=${module.AuthorProfile.DisplayName}`}>
                                 <div class="media-left">
                                     <figure class="image is-48x48 is-rounded">
                                         <img src={`https://pkgs.blishhud.com/metadata/img/author/${module.AuthorProfile.Id}.png`} class="is-rounded" alt="Module Author Image" onError={(e) => {
@@ -184,7 +184,7 @@ export default function ModuleProfile({ namespace, module }) {
                                 <div class="media-content">
                                     <p class="title is-4" style={{ lineHeight: "48px"}}>{module.AuthorProfile.DisplayName}</p>
                                 </div>
-                            </div>
+                            </a>
 
                             <div class="content">
                                 { module.AuthorProfile.GuildWars2Profile != null &&
