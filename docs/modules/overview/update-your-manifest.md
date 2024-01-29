@@ -112,7 +112,7 @@ A dependency on `bh.blishhud` indicates the versions of Blish HUD the module sup
 {
     "dependencies": {
         "bh.blishhud" : "~0.7.1",
-        "bh.general.markersandpaths" : "~1.2.3",
+        "bh.community.pathing" : "~1.2.3",
     }
 }
 ```
