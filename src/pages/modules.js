@@ -41,19 +41,21 @@ function AllModules(modules, [sortMethod, setSortMethod], isAuthor = false) {
     var pageDescription = siteConfig.tagline;
     var pageImage = null;
 
-    if (isAuthor && modules.length > 0) {
-        var authorName = modules[0].AuthorName;
+    if (isAuthor) {
+        if (modules.length > 0) {
+            var authorName = modules[0].AuthorName;
 
-        pageTitle = `Modules by ${authorName}`;
+            pageTitle = `Modules by ${authorName}`;
 
-        pageDescription = modules.length > 1 
-            ? `Check out ${modules.length} modules developed by ${authorName}.`
-            : `Check out modules developed by ${authorName}.`;
+            pageDescription = modules.length > 1 
+                ? `Check out ${modules.length} modules developed by ${authorName}.`
+                : `Check out modules developed by ${authorName}.`;
 
-        pageImage = modules[0].AuthorAvatar;
-    } else {
-        pageTitle = "Unknown Author";
-        pageDescription = "No modules could be found.";
+            pageImage = modules[0].AuthorAvatar;
+        } else {
+            pageTitle = "Unknown Author";
+            pageDescription = "No modules could be found.";
+        }
     }
 
     return (
