@@ -12,7 +12,9 @@ This repository contains the manifest files for Blish HUD modules. You are highl
 ## Submitting a Package
 
 :::caution
-**This process is deprecated.**  Module developers should reach out for a contributor account which provides access to a simple portal (called SSRD) to submit a module.  This portal allows you to more easily manage your releases, release notes, and module profiles.
+**This process is deprecated and new module release manifests will no longer be accepted this way.**
+
+Module developers should reach out for a contributor account which provides access to a simple portal (called SSRD) to submit a module.  This portal allows you to more easily manage your releases, release notes, and module profiles.
 
 Please reach out to Freesnöw#0001 on Discord to request access.
 :::

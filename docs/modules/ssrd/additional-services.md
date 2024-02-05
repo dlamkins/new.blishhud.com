@@ -19,4 +19,7 @@ https://github.com/blish-hud/Pathing/tree/bhud-static/bh.community.pathing
 These files are available at:<br/>
 https://bhm.blishhud.com/bh.community.pathing/
 
+For example:
+https://bhm.blishhud.com/bh.community.pathing/wiki/logo.png
+
 In addition to hosting content for your module, this hosting can be used to display static sites as it will serve html.
