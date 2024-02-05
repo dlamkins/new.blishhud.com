@@ -53,7 +53,7 @@ function AllModules(modules, [sortMethod, setSortMethod], isAuthor = false) {
         pageImage = modules[0].AuthorAvatar;
     } else {
         pageTitle = "Unknown Author";
-        pageDescription = "No modules could be found";
+        pageDescription = "No modules could be found.";
     }
 
     return (
