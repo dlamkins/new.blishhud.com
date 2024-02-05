@@ -16,7 +16,7 @@ import Loading from '@theme/Loading';
 
 */
 
-function AllModules(modules, [sortMethod, setSortMethod]) {
+function AllModules(modules, [sortMethod, setSortMethod], isAuthor = false) {
     const context = useDocusaurusContext();
     const { siteConfig = {} } = context;
 
@@ -37,12 +37,34 @@ function AllModules(modules, [sortMethod, setSortMethod]) {
         }
     }
 
+    var pageTitle = "Modules";
+    var pageDescription = siteConfig.tagline;
+    var pageImage = null;
+
+    if (isAuthor && modules.length > 0) {
+        var authorName = modules[0].AuthorName;
+
+        pageTitle = `Modules by ${authorName}`;
+
+        pageDescription = modules.length > 1 
+            ? `Check out ${modules.length} modules developed by ${authorName}.`
+            : `Check out modules developed by ${authorName}.`;
+
+        pageImage = modules[0].AuthorAvatar;
+    } else {
+        pageTitle = "Unknown Author";
+        pageDescription = "No modules could be found";
+    }
+
     return (
         <Layout
-            title={`Modules`}
-            description={`${siteConfig.tagline}`}>
+            title={ pageTitle }
+            description={ pageDescription }>
             <Head>
                 <meta name="keywords" content="Guild Wars 2, gw2, Blish, HUD, bhud, TacO, Overlay" />
+                { pageImage != null &&
+                    <meta name="og:image" content={ pageImage } />
+                }
             </Head>
             <div className="module-content">
                 <div className="field has-addons">
@@ -166,7 +188,7 @@ function Modules() {
                 } else {
                     return AllModules(modules.filter(function(module) {
                         return !module.AuthorName.localeCompare(moduleAuthor, undefined, { sensitivity: 'base' });
-                    }), [sortMethod, setSortMethod]);
+                    }), [sortMethod, setSortMethod], true);
                 }
             } else {
                 setIsLoaded(false);
