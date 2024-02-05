@@ -4,15 +4,16 @@ title: Getting Started
 ---
 
 [![Discord](https://img.shields.io/badge/Join_Our_Discord-📦module_discussion-Green)](https://discord.gg/HzAV82d)
-[![](https://img.shields.io/badge/Release-ModuleTemplateDeployment.vsix-Blue)](https://github.com/blish-hud/Module-Template/releases)
 
 ## Overview
 
 Blish HUD module projects can be created from scratch or by using the above module template.  The template is the recommended method.  Both methods are described below.  Do not perform both sets of instructions.
 
-## Setup Using the Module Template for Visual Studio 2019
+## Setup Using the Module Template for Visual Studio
 
-1. Install the latest Visual Studio module template found under [Releases](https://github.com/blish-hud/Module-Template/releases).
+1. Install the latest Visual Studio module template for your version of Visual Studio:
+   - [Template for Visual Studio 2019](/downloads/ModuleTemplateDeployment2019.vsix)
+   - [Template for Visual Studio 2022](/downloads/ModuleTemplateDeployment2022.vsix)
 2. Create a new project in Visual Studio using the template.
    - *Note: On the "Configure your new project" step of the project wizard, make sure to enter the desired project name.*
    - *Note: On the "Configure your new project" step of the project wizard, you **must** select "Place solution and project in the same directory".*

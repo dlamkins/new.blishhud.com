@@ -17,7 +17,18 @@ As long as your project generates a PDB file, it will be packaged into your bhm 
 Blish HUD behaves somewhat different when the debug flag is passed to it.  Beyond showing additional runtime data in the top right-corner, some module error handling is disabled.  The intention is to ensure that exceptions are not caught and are instead rethrown to ensure you can address them.
 
 ## Troubleshooting
-- Problem: The debugging runs only for a very short time. 
-  - Solution: Make sure that no other instance of Blish HUD is already running.
-- Problem: Blish HUD starts, but the module is not running.  The module is listed in Blish HUD, but the module enable and disable buttons are both disabled.  In additon to that Blish HUD tells me to restart Blish HUD to get the module working.  But that does not work either. 
-  - Solution: You try to debug a module for which a .bhm file already exists in the folder %userprofile%Documents\Guild Wars 2\addons\blishhud\modules.  Rename the .bhm file ending for this module in the folder and try again.  Or use the --settings **Command line arguments** (https://blishhud.com/docs/user/launch-options#-s---settings-pathtosettingsdir).
+
+<details>
+  <summary>Blish HUD closes almost immediately when launched for debugging without an error.</summary>
+  <div>
+    Blish HUD is likely already open.  Make sure there are no other instances of Blish HUD in Task Manager or in your notification area.
+  </div>
+</details>
+
+<details>
+  <summary>Blish HUD indicates that it must be restarted in order to enable your module (Enable and Disable buttons are disabled).</summary>
+  <div>
+    <p>You are attempting to debug a module which is already in your modules folder.  Remove your module from Blish HUD (either through the UI or manually at `%userprofile%\Documents\Guild Wars 2\addons\blishhud\modules`) and then attempt launching Blish HUD again using the `--module` parameter.</p>
+    <p>Alternatively, you can keep your regularly used Blish HUD profile seperate from your development environment by using the <a target="_blank" href="/docs/user/launch-options#-s---settings-pathtosettingsdir">`--settings` parameter</a>.</p>
+  </div>
+</details>
