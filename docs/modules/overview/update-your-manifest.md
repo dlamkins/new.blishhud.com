@@ -112,7 +112,7 @@ A dependency on `bh.blishhud` indicates the versions of Blish HUD the module sup
 {
     "dependencies": {
         "bh.blishhud" : "~0.7.1",
-        "bh.general.markersandpaths" : "~1.2.3",
+        "example.module.namespace" : "~1.2.3",
     }
 }
 ```
@@ -128,7 +128,7 @@ A url that can be used to link to the project or a link to more details instruct
 
 ```json
 {
-    "url": "https://github.com/blish-hud/manifest.json"
+    "url": "https://github.com/yourname/yourmodule/README.md"
 }
 ```
 
@@ -137,7 +137,7 @@ A url that can be used to link to the project or a link to more details instruct
 ### Optional Attributes
 
 #### Directories
-A list of directory names that are used by the module.  These directories will be registered by the `FileService` and a button to open the directory directly will be shown in the module settings.
+A list of directory names that are used by the module.  These directories will be registered by the `FileService` and a button to open the directory directly will be shown in the module settings.  Do not include subfolders (e.g. `"markers/data"`) in your manifest - they are not supported in the manifest and your module must manage those directly.
 
 ```json
 {
@@ -146,7 +146,7 @@ A list of directory names that are used by the module.  These directories will b
 ```
 
 #### Enabled Without GW2
-Allows the module to continue to run when GW2 is not running and Blish HUD is still running in the tray.  Do not set to true unless your module requires this.
+Allows the module to continue to run when GW2 is not running and Blish HUD is still running in the tray.  Do not set to true unless your module requires this.  Modules that enable this will be treated with more scrutiny. 
 
 ```json
 {
@@ -154,10 +154,10 @@ Allows the module to continue to run when GW2 is not running and Blish HUD is st
 }
 ```
 
-*This value is currently not used.*
-
 #### API Permissions
 Gives the module permission to access the specified API permissions.  A permission can be marked as optional if the functionality of the module does not rely on the permission (the module must check for this).  A description can also be provided to provide justification to the end user as to why the permission is needed.
+
+If no API permissions are needed, do not include `api_permissions` at all.
 
 ```json
 {
