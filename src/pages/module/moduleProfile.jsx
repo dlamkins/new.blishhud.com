@@ -4,7 +4,7 @@ import HumanDate from '../components/humanDate';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 function AutoEmbedYouTube(profile) {
-    const ytEmbedPattern = /<a href="https:\/\/www\.youtube\.com.*\/([^"]*)"[^<]+<\/a>/gm;
+    const ytEmbedPattern = /<a href="https:\/\/(www\.)?youtube\.com.*\/([^"]*)"[^<]+<\/a>/gm;
 
     let m;
 
@@ -13,7 +13,7 @@ function AutoEmbedYouTube(profile) {
             ytEmbedPattern.lastIndex++;
         }
 
-        profile = profile.replace(m[0], `<iframe width='560' height='315' src='https://www.youtube.com/embed/${m[1]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`);
+        profile = profile.replace(m[0], `<iframe width='560' height='315' src='https://www.youtube.com/embed/${m[2]}' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`);
     }
 
     return profile;
