@@ -23,7 +23,9 @@ You will be presented with the manifest of each detected module in the repo.  On
 
 *An old recording of this process can be seen below, though, some aspects of the UI have since been updated.*
 
-<div style={{position: "relative", paddingBottom: "calc(52.86% + 44px)" }}><iframe src='https://gfycat.com/ifr/UnequaledGreenBullfrog' frameborder='0' scrolling='no' width='100%' height='100%' style={{position: "absolute", top:0, left:0}} allowfullscreen></iframe></div>
+<div style={{position: "relative", paddingBottom: "calc(52.86% + 44px)" }}>
+<iframe src="/img/docs/ssrd/ssrd.webm" frameborder='0' scrolling='no' width='100%' height='100%' style={{position: "absolute", top:0, left:0}} allowfullscreen></iframe>
+</div>
 
 ## Webhooks
 

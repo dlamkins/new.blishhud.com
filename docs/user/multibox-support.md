@@ -16,7 +16,7 @@ We recommend that you use [Healix's Gw2Launcher](https://github.com/Healix/Gw2La
 3. Select **Guild Wars 2** from the left side and then select **Launch options**.
 4. Ensure that **Mumble link name** is checked and set to `MumbleLink_%accountid%`
 
-<iframe width="602" height="413" src="https://giant.gfycat.com/DemandingAnimatedAsianconstablebutterfly.mp4"></iframe>
+<iframe width="602" height="413" src="/img/docs/multiboxing/mb1.webm"></iframe>
 
 ### 2. Auto-launch Blish HUD
 
@@ -31,7 +31,7 @@ We recommend that you use [Healix's Gw2Launcher](https://github.com/Healix/Gw2La
 | Run after... | `Launching` | Blish HUD can be launched immediately or you can select `Loading the game` if you prefer |
 | When the game exits... | `Do nothing` | It is important that you configure Blish HUD to close on its own. Do not let your launcher close Blish HUD! |
 
-<iframe width="466" height="382" src="https://giant.gfycat.com/DizzyNauticalBushsqueaker.mp4"></iframe>
+<iframe width="466" height="382" src="/img/docs/multiboxing/mb2.webm"></iframe>
 
 ### 3. Configure Blish HUD to close itself
 
@@ -39,4 +39,4 @@ We recommend that you use [Healix's Gw2Launcher](https://github.com/Healix/Gw2La
 2. Select the settings tab and navigate to **Overlay Settings**.
 3. Uncheck **Minimize to tray when Guild Wars 2 Closes.**
 
-<iframe width="588" height="321" src="https://giant.gfycat.com/NeighboringThornyCockatiel.mp4"></iframe>
+<iframe width="588" height="321" src="/img/docs/multiboxing/mb3.webm"></iframe>
