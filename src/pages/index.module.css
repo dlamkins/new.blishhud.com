@@ -35,3 +35,37 @@
   height: 128px;
   width: 128px;
 }
+
+blockquote, details {
+  background-color: #15243D;
+  border-radius: 0.4rem;
+  margin-bottom: 1em !important;
+}
+
+blockquote {
+  border-left: 5px solid #B5CAEF;
+  padding: 0.75em 1.5em !important;
+}
+
+blockquote > p {
+  margin: 0 !important;
+}
+
+details {
+  border: 1px solid #B5CAEF;
+  padding: 0.5em;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary > svg {
+  display: none;
+}
+
+details a {
+  color: white !important;
+  font-weight: bold;
+  text-decoration: underline !important;
+}
