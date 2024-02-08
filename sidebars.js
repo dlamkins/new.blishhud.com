@@ -60,7 +60,8 @@ const sidebars = {
         "modules/guides/gw2api",
         "modules/guides/graphicsdevice",
         "modules/guides/textures",
-        "modules/guides/gw2assets"
+        "modules/guides/gw2assets",
+        "modules/guides/shaders"
       ]
     },
     {
