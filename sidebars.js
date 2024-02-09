@@ -85,6 +85,7 @@ const sidebars = {
         "modules/ssrd/overview",
 
         "modules/ssrd/registering-modules",
+        "modules/ssrd/manage-releases",
         "modules/ssrd/additional-services"
       ]
     }

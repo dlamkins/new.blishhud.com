@@ -7,7 +7,7 @@ title: Additional Services
 
 In addition to release management, SSRD provides other services intended to benefit our module developers.
 
-### Static Hosting
+## Static Hosting
 
 Modules can host static content on `bhm.blishhud.com` for free.  This is done by creating a branch on your module's repository named `bhud-static/modulenamespace` where `modulenamespace` is the namespace of your module.
 
