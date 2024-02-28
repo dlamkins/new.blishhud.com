@@ -67,6 +67,12 @@ Blish HUD maintains a metadata file that keeps track of all the textures on the 
 
 Developers should keep a reference to the `AsyncTexture2D` until they no longer need the texture.  Once Blish HUD determines that there are no more references to the texture, it will be released from memory until it is requested again.
 
+:::danger
+
+Do not dispose of textures received from the DatAssetCache.  These textures are shared between modules and with core.  Blish HUD itself manages the lifecycle of these textures.
+
+:::
+
 ### Using the DatAssetCache
 
 You can use the DatAssetCache one of 4 ways:
