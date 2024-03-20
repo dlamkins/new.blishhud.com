@@ -51,7 +51,7 @@ API access is optional and many modules will work without issue if you have not 
 
 ## What platforms can Blish HUD run on?
 
-At this time, Blish HUD only supports running on Windows.  The method it uses to overlay does not work well when running through Wine on Linux.  In the future as we migrate the codebase to .NET Core, which is cross-platform, there are plans to implement some functionality to allow it to run natively on Linux and integrate with Guild Wars 2 running through Wine, but there is no ETA on that.
+At this time, Blish HUD only officially supports running on Windows.  Support for Linux is complicated by [a number of factors](https://github.com/blish-hud/Blish-HUD/discussions/873#discussioncomment-6298349), but some users (such as those using Steam Decks) can use [this guide](https://gist.github.com/martinlabate/c4e6f08880a009f88dc1edaa4c6cd87a) to run Blish HUD on Linux.  The comments on this guide include some additional support.
 
 ## Is Blish HUD compatible with...
 
