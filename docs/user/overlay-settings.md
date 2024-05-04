@@ -13,7 +13,7 @@ Overlay settings can be found in Blish HUD's main window by navigating to the Se
 | **Minimize to tray when Guild Wars 2 closes** | *Yes* | If enabled, Blish HUD will remain running when Guild Wars 2 is closed.  This allows you to easily use Blish HUD without needing to launch it every time you run Guild Wars 2.  While in the tray, Blish HUD uses very little resources and is only tasked with checking for the game running every so often. |
 | **Show in taskbar** | *No* | If enabled, Blish HUD will show an icon on your taskbar.  This is helpful when attempting to [record Blish HUD](/docs/user/troubleshooting/776). |
 | **Close window on escape** | *Yes* | If enabled, pressing ESC will close most Blish HUD and module windows which is the standard behavior in-game. |
-| **Interact** | *F* | The key you have bound in-game to interact.  Used my multiple modules to add additional functionality. |
+| **Interact** | *F* | The key you have bound in-game to interact.  Used by multiple modules to add additional functionality. |
 | **Hide interface** | *Ctrl + Shift + H* | The key combination to toggle showing Blish HUD's interface. |
 | **Toggle Blish HUD window** | *Ctrl + Shift + B* | The key combination to toggle showing the main Blish HUD window. |
 | **Preview releases** | *No* | If checked, Blish HUD will show prerelease modules in the module repo as well as prompt you to update to prerelease versions of Blish HUD.  Please know that prereleases may not be stable.  We recommend being a member of our Discord to provide feedback and request assistance if you intend on using prerelease versions. |
