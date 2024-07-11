@@ -111,7 +111,7 @@ export default function ModuleProfile({ namespace, module }) {
                     
                     <div class="box external-source" dangerouslySetInnerHTML={{ __html: module.ProfileSource ? module.ProfileSource : "<center><i>No Description</i></center>" }}></div>
 
-                    { module.Downloads >= 500 && 
+                    { false /* && module.Downloads >= 500 */ && 
                         <div class="card" style={{ marginTop: "1em", padding: "0" }}>
                             <header class="card-header">
                                 <p class="card-header-title">
