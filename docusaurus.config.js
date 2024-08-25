@@ -114,12 +114,12 @@ const config = {
                   </div>`,
       },
       announcementBar: {
-        id: 'api', // Any value that will identify this message. (discord = default, api = api down)
+        id: 'discord', // Any value that will identify this message. (discord = default, api = api down)
         content:
-          'The Guild Wars 2 Web API is down <a target="_blank" href="https://en-forum.guildwars2.com/topic/149447-guild-wars-2-api-disabled-from-august-16-23/#comment-2164067">until ArenaNet turns it on August 23</a>. Some module features will be unavailable until the API returns. Join our <a target="_blank" href="https://discord.gg/FYKN3qh">Discord channel</a> for assistance.',
-        backgroundColor: '#d94130', // Defaults to `#fff`.  We typically use: #8172DA for normal and #d94130 for warnings.
+          'Check out our <a target="_blank" href="https://discord.gg/FYKN3qh">Discord channel</a> for the latest news, prerelease builds, and troubleshooting assistance.',
+        backgroundColor: '#8172DA', // Defaults to `#fff`.  We typically use: #8172DA for normal and #d94130 for warnings.
         textColor: 'white', // Defaults to `#000`.
-        isCloseable: false, // Defaults to `true`.
+        isCloseable: true, // Defaults to `true`.
       },
       colorMode: {
         defaultMode: "dark",
