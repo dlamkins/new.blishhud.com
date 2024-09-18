@@ -165,6 +165,20 @@ export default function ModuleProfile({ namespace, module }) {
                             </center>
                         </div>
                     </div>
+                    { module.MuklukVideo != null &&
+                        <div class="card" style={{ marginTop: "1em" }}>
+                            <header class="card-header">
+                                <p class="card-header-title">
+                                    Mukluk Showcase
+                                </p>
+                            </header>
+                            <div class="card-content" style={{ padding: "0", position: "relative", width: "100%", height: "0", paddingBottom: "56.25%" }}>
+                                <iframe 
+                                style={{ position: "absolute", width: "100%", height: "100%", left: "0", top: "0" }}
+                                width="550" height="275" src={module.MuklukVideo} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    }
                     <div class="card" style={{ marginTop: "1em" }}>
                         <header class="card-header">
                             <p class="card-header-title">
