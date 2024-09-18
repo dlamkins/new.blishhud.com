@@ -25,7 +25,7 @@ jobs:
       - name: Generate site
         run: npm run build
       - name: Upload resulting website
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build/
@@ -34,12 +34,11 @@ jobs:
           ref: gh-pages
       - run: rm -rf *
       - name: Download website
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: build
       - name: Replace docs
         run: |
-          mv /home/runner/work/new.blishhud.com/new.blishhud.com/build/* /home/runner/work/new.blishhud.com/new.blishhud.com/
           git add -A
           if [[ `git status --porcelain` ]]; then
             git config --local user.email "actions@github.com"
